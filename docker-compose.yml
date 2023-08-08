@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  task-db:
+    image: postgres:13
+    ports:
+      - 5434:5432
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: task_db
+    networks:
+      - task-net
+  test-db:
+    image: postgres:13
+    ports:
+      - 5435:5432
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test_db
+    networks:
+      - task-net
+networks:
+  task-net:
+    
