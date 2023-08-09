@@ -4,7 +4,9 @@ import { GetUser } from '../auth/decorator';
 import { JwtGuard } from '../auth/guard';
 import { EditUserDto } from './dto';
 import { UserService } from './user.service';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Users')
 @UseGuards(JwtGuard)
 @Controller('users')
 export class UserController {
@@ -19,8 +21,8 @@ export class UserController {
         return this.userService.editUser(userId, dto);
     }
 
-    @Delete()
+/*     @Delete()
     deleteUser(@Req() req){
         return req.user;
-    }
+    } */
 }

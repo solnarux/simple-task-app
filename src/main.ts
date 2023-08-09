@@ -10,10 +10,9 @@ async function bootstrap() {
   .setTitle('Task management API')
   .setDescription('API for task management application')
   .setVersion('1.0')
-  .addTag('tasks')
   .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('docs', app, document);
 
   app.useGlobalPipes(new ValidationPipe({whitelist: true}));
 
